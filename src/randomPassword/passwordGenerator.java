@@ -9,7 +9,7 @@ public class passwordGenerator {
 			System.out.println("Example: java randomPassword.passwordGenerator help");
 		}
 		else if (args[0].equals("help")){
-			// type help message
+			// type help message on how to run program correctly
 			System.out.println("help was specified");
 		}
 		else if (args.length > 0 && args[0].equals("help") == false) {
