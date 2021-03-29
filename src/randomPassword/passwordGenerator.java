@@ -9,12 +9,10 @@ public class passwordGenerator {
 			System.out.println("Example: java randomPassword.passwordGenerator help");
 		}
 		else if (args[0].equals("help")){
-			// type help message on how to run program correctly
-			System.out.println("help was specified");
+			printBeginningMessage();
 		}
 		else if (args.length > 0 && args[0].equals("help") == false) {
 			int passwordLength = Integer.parseInt(args[0]);
-			//System.out.println("help was not specified, can continue checking inputs");
 			
 			//separated all possible characters for future iterations
 			//this will allow for the implementation of specific characters being needed
@@ -22,12 +20,12 @@ public class passwordGenerator {
 			String upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 			String numbers = "1234567890";
 			String symbols = "~`!@#$%^&*()_-+={[}]|\\:;\"'<,>.?/";
+			
 			//joined all strings for creation of random password function in first iteration **will change with user input implementation**
 			String firstIterationCharacters = lowerCase + upperCase + numbers + symbols; 
 			int bankLength = firstIterationCharacters.length();
 			
-			//RandomPasswordGenerator autoset to 15 **will implement user input next**
-			
+			//password generating with length as specified by user
 			String password = "";
 			for (int i = 0; i < passwordLength; i++) {
 				int index = new Random().nextInt(firstIterationCharacters.length());
@@ -38,7 +36,8 @@ public class passwordGenerator {
 	}
 	
 	private static void printBeginningMessage() {
-		System.out.println("Welcome to You Shall Not Pass. This is a random password generator. To begin using the program, enter \"start\"."
-				+ "To end, enter \"quit\"");
+		System.out.println("Welcome to You Shall Not Pass. This is a random password generator. "
+				+ "To begin using the program, run the program normally and add a password length as a command line argument.");
+		System.out.println("For example, if your desired password length is 5, run the program as: java randomPassword.passwordGenerator 5");
 	}
 }
