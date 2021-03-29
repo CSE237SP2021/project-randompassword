@@ -13,4 +13,6 @@ Is there anything that you implemented but doesn't currently work?
   no  
 
 What commands are needed to compile and run your code from the command line (or better yet, provide a script that people can use to run your program!)
-  right now the only command is giving a number for the length of the password. For example if you want a password length of 8 you would type: java randomPassword.passwordGenerator 8
+  right now the only command is giving a number for the length of the password. For example if you want a password length of 8 you would type: java randomPassword.passwordGenerator 8\
+  there is also a supplementary command "help" that prints out a useful message on how to run the program properly.
+  Important: Make sure after compiling to run the program from the class folder and not where the java file is. (Run from the src folder)
