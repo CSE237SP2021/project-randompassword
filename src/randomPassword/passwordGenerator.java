@@ -22,4 +22,9 @@ public class passwordGenerator {
 		}
 		System.out.println(password);
 	}
+	
+	private static void printBeginningMessage() {
+		System.out.println("Welcome to You Shall Not Pass. This is a random password generator. To begin using the program, enter \"start\"."
+				+ "To end, enter \"quit\"");
+	}
 }
