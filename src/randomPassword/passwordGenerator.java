@@ -18,7 +18,6 @@ public class passwordGenerator {
 		int length = Integer.parseInt(passwordLength);
 		
 		String firstIterationCharacters = lowerCase + upperCase + numbers + symbols; 
-		int bankLength = firstIterationCharacters.length();
 		
 		String password = "";
 		for (int i = 0; i < length; i++) {
