@@ -12,8 +12,10 @@ public class passwordGenerator {
 		System.out.println("Welcome to You Shall Not Pass. This is a random password generator. "
 				+ "To begin using the program, run the program normally and add a password length as a command line argument.");
 		System.out.println("For example, if your desired password length is 5, run the program as: java randomPassword.passwordGenerator 5");
+		
+		//TODO: Update commands here
 	}
-	
+	//TODO: Add specified characters feature to generating step
 	private static void generatePassword(String passwordLength) {
 		int length = Integer.parseInt(passwordLength);
 		
@@ -38,5 +40,6 @@ public class passwordGenerator {
 		else if (args.length > 0 && args[0].equals("help") == false) {
 			generatePassword(args[0]);
 		}
+		//TODO: Set up case where specified characters is in input
 	}
 }
