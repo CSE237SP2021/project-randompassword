@@ -15,6 +15,10 @@ public class passwordGenerator {
 		
 		//TODO: Update commands here
 	}
+	private static void printArgumentErrorMessage() {
+		System.out.println("No command line argument specified or arguments were incorrect. Use help as a command line argument for more information on how to run this program.");
+		System.out.println("Example: java randomPassword.passwordGenerator help");
+	}
 	//TODO: Add specified characters feature to generating step
 	private static void generatePassword(String passwordLength) {
 		int length = Integer.parseInt(passwordLength);
@@ -30,16 +34,19 @@ public class passwordGenerator {
 	}
 	
 	public static void main(String[] args) {
-		if (args.length == 0) {
-			System.out.println("No command line argument specified. Use help as a command line argument for more information on how to run this program.");
-			System.out.println("Example: java randomPassword.passwordGenerator help");
+		int argsLength = args.length;
+		switch(argsLength) {
+			case 0:
+				printArgumentErrorMessage();
+				break;
+			case 1:
+				if (args[0].equals("help")) {
+					printBeginningMessage();
+				} else {
+					generatePassword(args[0]);
+				}
+			case 2:
+				//generatePassword(args[0], args[1]);
 		}
-		else if (args[0].equals("help")){
-			printBeginningMessage();
-		}
-		else if (args.length > 0 && args[0].equals("help") == false) {
-			generatePassword(args[0]);
-		}
-		//TODO: Set up case where specified characters is in input
 	}
 }
