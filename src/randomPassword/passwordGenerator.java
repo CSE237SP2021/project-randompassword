@@ -53,13 +53,19 @@ public class passwordGenerator {
 	 * @param passwordLength desired password length
 	 */
 	private static void generatePassword(String passwordLength) {
-		int length = Integer.parseInt(passwordLength); 
-		String password = "";
-		for (int i = 0; i < length; i++) {
-			int index = new Random().nextInt(characters.length());
-			password += characters.charAt(index);
+		if(isInputInRange(passwordLength)) {
+			int length = Integer.parseInt(passwordLength); 
+			String password = "";
+			for (int i = 0; i < length; i++) {
+				int index = new Random().nextInt(characters.length());
+				password += characters.charAt(index);
+			}
+			System.out.println(password);
+		} else {
+			printArgumentErrorMessage();
+			printBeginningMessage();
 		}
-		System.out.println(password);
+		
 	}
 	/**
 	 * Generates password including specific characters
@@ -67,14 +73,30 @@ public class passwordGenerator {
 	 * @param specifiedCharacters specific characters to include in password generation
 	 */
 	private static void generatePassword(String passwordLength, String specifiedCharacters) {
-		int length = Integer.parseInt(passwordLength) - specifiedCharacters.length();
-		String password = "";
-		for (int i = 0; i < length; i++) {
-			int index = new Random().nextInt(characters.length());
-			password += characters.charAt(index);
+		if(isInputInRange(passwordLength)) {
+			int length = Integer.parseInt(passwordLength) - specifiedCharacters.length();
+			String password = "";
+			for (int i = 0; i < length; i++) {
+				int index = new Random().nextInt(characters.length());
+				password += characters.charAt(index);
+			}
+			password = addSpecifiedCharacters(specifiedCharacters, password);
+			System.out.println(password);
+		} else {
+			printArgumentErrorMessage();
+			printBeginningMessage();
 		}
-		password = addSpecifiedCharacters(specifiedCharacters, password);
-		System.out.println(password);
+		
+	}
+	
+	public static boolean isInputInRange(String givenInput) {
+		boolean isInputInRange = false;
+		char firstCharInInput = givenInput.charAt(0);
+		if(numbers.indexOf(firstCharInInput) >= 0 ) {
+			isInputInRange = true;
+		}
+		
+		return isInputInRange;
 	}
 	
 	public static void main(String[] args) {
