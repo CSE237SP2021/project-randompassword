@@ -77,6 +77,16 @@ public class passwordGenerator {
 		System.out.println(password);
 	}
 	
+	public boolean isInputInRange(String givenInput) {
+		boolean isInputInRange = false;
+		char firstCharInInput = givenInput.charAt(0);
+		if(numbers.indexOf(firstCharInInput) >= 0 ) {
+			isInputInRange = true;
+		}
+		
+		return isInputInRange;
+	}
+	
 	public static void main(String[] args) {
 		int argsLength = args.length;
 		switch(argsLength) {
