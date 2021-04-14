@@ -14,7 +14,7 @@ public class passwordGenerator {
 		System.out.println("For example, if your desired password length is 5, run the program as: java randomPassword.passwordGenerator 5");
 	}
 	
-	private static void generatePassword(String passwordLength) {
+	public static String generatePassword(String passwordLength) {
 		int length = Integer.parseInt(passwordLength);
 		
 		String firstIterationCharacters = lowerCase + upperCase + numbers + symbols; 
@@ -26,6 +26,8 @@ public class passwordGenerator {
 			password += firstIterationCharacters.charAt(index);
 		}
 		System.out.println(password);
+		
+		return password;
 	}
 	
 	public static void main(String[] args) {
