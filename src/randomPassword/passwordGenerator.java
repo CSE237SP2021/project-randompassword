@@ -30,7 +30,7 @@ public class passwordGenerator {
 	 * @param password given password where the specifiedCharacters are going to be added
 	 * @return new password with specified characters randomly inserted into it
 	 */
-	public static String addSpecifiedCharacters(String specifiedCharacters, String password) {
+	private static String addSpecifiedCharacters(String specifiedCharacters, String password) {
 		int randomIndices[] = new int[specifiedCharacters.length()];
 		for (int i = 0; i < randomIndices.length; i++) {
 			randomIndices[i] = new Random().nextInt(password.length());
