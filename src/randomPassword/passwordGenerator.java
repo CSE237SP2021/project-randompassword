@@ -19,23 +19,7 @@ public class passwordGenerator {
 	
 	
 	public static void main(String[] args) {
-		int argsLength = args.length;
-		password passwordObj = new password();
-		switch(argsLength) {
-			case 0:
-				printArgumentErrorMessage();
-				break;
-			case 1:
-				if (args[0].equals("help")) {
-					printBeginningMessage();
-				} else {
-					generatePasswordSingleParameter(args, passwordObj);
-				}
-				break;
-			case 2:
-				generatePasswordTwoParameters(args, passwordObj);
-				break;
-		}
+		run(args);
 	}
 	/**
 	 * This method generates a password when there has only been two parameters given
@@ -61,6 +45,29 @@ public class passwordGenerator {
 		}else {
 			printArgumentErrorMessage();
 			printBeginningMessage();
+		}
+	}
+	/**
+	 * This method runs the program; it uses the arguments the user inputs to call the appropriate methods
+	 * @param args arguments entered when the program first ran
+	 */
+	private static void run(String[] args) {
+		int argsLength = args.length;
+		password passwordObj = new password();
+		switch(argsLength) {
+			case 0:
+				printArgumentErrorMessage();
+				break;
+			case 1:
+				if (args[0].equals("help")) {
+					printBeginningMessage();
+				} else {
+					generatePasswordSingleParameter(args, passwordObj);
+				}
+				break;
+			case 2:
+				generatePasswordTwoParameters(args, passwordObj);
+				break;
 		}
 	}
 }
