@@ -61,7 +61,7 @@ public class password {
 	 * Generates password with specific length 
 	 * @param passwordLength desired password length
 	 */
-	public void generatePassword(String passwordLength) {
+	public String generatePassword(String passwordLength) {
 			int length = Integer.parseInt(passwordLength); 
 			String password = "";
 			for (int i = 0; i < length; i++) {
@@ -69,13 +69,15 @@ public class password {
 				password += characters.charAt(index);
 			}
 			System.out.println(password);
+			
+			return password;
 	}
 	/**
 	 * Generates password including specific characters
 	 * @param passwordLength desired password length
 	 * @param specifiedCharacters specific characters to include in password generation
 	 */
-	public void generatePassword(String passwordLength, String specifiedCharacters) {
+	public String generatePassword(String passwordLength, String specifiedCharacters) {
 			int length = Integer.parseInt(passwordLength) - specifiedCharacters.length();
 			String password = "";
 			for (int i = 0; i < length; i++) {
@@ -84,6 +86,8 @@ public class password {
 			}
 			password = addSpecifiedCharacters(specifiedCharacters, password);
 			System.out.println(password);
+			
+			return password;
 		
 	}
 	/**
