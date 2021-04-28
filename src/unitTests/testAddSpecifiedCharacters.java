@@ -1,6 +1,7 @@
-package tests;
+package unitTests;
 
 import static org.junit.jupiter.api.Assertions.*;
+import randomPassword.password;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,8 +10,8 @@ import randomPassword.passwordGenerator;
 class testAddSpecifiedCharacters {
 
 	@Test
-	void test() {
-		passwordGenerator testCase = new passwordGenerator();
+	void testAddSpecifiedChars() {
+		password testCase = new password();
 		String specifiedChars = "abcd";
 		String testPassword = "xxxxxxxx";
 		boolean containsSpecifiedChars = true;
